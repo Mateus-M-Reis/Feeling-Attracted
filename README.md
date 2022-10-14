@@ -2,7 +2,7 @@
 
 This is a simple attractor visualization inspired [this notebook](https://panel.holoviz.org/gallery/simple/clifford_interact.html). Right now it is made with [numpy](), [ipycanvas](), and [ipywidgets](), although it may change. It's not optimized for speed yet, despite this it already feels more reactive than the aforementioned.
 
-![](/home/machinedr/Códigos/Feeling%20Attracted/demo/feeling_attracted.gif)
+![](./demo/feeling_attracted.gif)
 
 ## Run it
 
@@ -35,7 +35,5 @@ You can run the notebook without even installing [voila](), but if you want to r
 ## To do
 
 - Everything
-  
-  
 
 Updates soon.
