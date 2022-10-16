@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # # Feeling attracted
-# 
+#
 # An interactive vizualization for some cool attractors.
 
 # #### Import some packages
@@ -28,7 +28,6 @@ import bqplot.pyplot as plt
 
 
 figure = plt.figure(
-    title='Clifford Attractor aka Fractral Dream',
     layout={'width': '100%', 'height': '100%'},
     animation_duration=1000,
     fig_margin={
@@ -68,6 +67,12 @@ clifford_wids = VBox([
     clifford_c,
     clifford_d,
 ])
+clifford_formula = HTMLMath("""
+        <h2>Clifford Attractor (Fractral Dream)</h1>
+        $$
+        x_{n+1} = sin(ay_n) + c.cos(ax_n)\\\\
+        y_{n+1} = sin(bx_n) + d.cos(by_n)
+        $$""")
 
 
 # ### Updading clifford figure
@@ -113,7 +118,9 @@ panel = VBox([
     HTMLMath("<Br>"),
     attractor_selector,
     HTMLMath("<Br><Br>"),
-    clifford_wids
+    clifford_wids,
+    HTMLMath("<Br><Br>"),
+    clifford_formula,
 ])
 
 ui = AppLayout(
