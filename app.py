@@ -12,16 +12,14 @@
 
 import numpy as np
 from ipywidgets import (
-    Dropdown, 
-    IntSlider, 
-    FloatSlider, 
-    VBox, 
-    AppLayout, 
-    HTMLMath, 
+    Dropdown,
+    FloatSlider,
+    VBox,
+    AppLayout,
+    HTMLMath,
     interactive_output
 )
 import bqplot.pyplot as plt
-from ipycanvas import Canvas, hold_canvas
 
 
 # #### Create the figure and the attractor selector
@@ -30,8 +28,8 @@ from ipycanvas import Canvas, hold_canvas
 
 
 figure = plt.figure(
-    title = 'Clifford Attractor aka Fractral Dream',
-    layout = {'width': '100%', 'height': '100%'},
+    title='Clifford Attractor aka Fractral Dream',
+    layout={'width': '100%', 'height': '100%'},
     animation_duration=1000,
     fig_margin={
         'top': 40,
@@ -42,10 +40,10 @@ figure = plt.figure(
 )
 
 attractor_selector = Dropdown(
-    options = ['Clifford'], 
-    index = 0, 
-    value = 'Clifford',
-    lavel = 'Select Attractor Model'
+    options=['Clifford'],
+    index=0,
+    value='Clifford',
+    lavel='Select Attractor Model'
 )
 
 
@@ -56,10 +54,14 @@ attractor_selector = Dropdown(
 # In[106]:
 
 
-clifford_a = FloatSlider(value=1.9, min=.1, max=2.0, step=.1, layout={'width': '99%'})
-clifford_b = FloatSlider(value=1.9, min=.1, max=2.0, step=.1, layout={'width': '99%'})
-clifford_c = FloatSlider(value=1.9, min=.1, max=2.0, step=.1, layout={'width': '99%'})
-clifford_d = FloatSlider(value=.8, min=0, max=2.0, step=.1, layout={'width': '99%'})
+clifford_a = FloatSlider(
+        value=1.9, min=.1, max=2.0, step=.1, layout={'width': '99%'})
+clifford_b = FloatSlider(
+        value=1.9, min=.1, max=2.0, step=.1, layout={'width': '99%'})
+clifford_c = FloatSlider(
+        value=1.9, min=.1, max=2.0, step=.1, layout={'width': '99%'})
+clifford_d = FloatSlider(
+        value=.8, min=0, max=2.0, step=.1, layout={'width': '99%'})
 clifford_wids = VBox([
     clifford_a,
     clifford_b,
@@ -80,8 +82,10 @@ def clifford_trajectory(a, b, c, d, n=25000):
         ys[i+1] = np.sin(b * xs[i]) + d * np.cos(b * ys[i])
     return xs, ys
 
+
 xs, ys = clifford_trajectory(1.9, 1.9, 1.9, 0.8)
-plt.scatter(xs, ys, stroke=None, default_size=1, colors=['white'], opacities=[.2])
+plt.scatter(
+        xs, ys, stroke=None, default_size=1, colors=['white'], opacities=[.2])
 figure.axes[0].grid_lines = 'none'
 figure.axes[1].grid_lines = 'none'
 
@@ -90,6 +94,7 @@ def clifford_plot(a=1.9, b=1.9, c=1.9, d=0.8):
     xs, ys = clifford_trajectory(a, b, c, d)
     figure.marks[0].x = xs
     figure.marks[0].y = ys
+
 
 update_clifford = interactive_output(clifford_plot, {
     'a': clifford_a,
@@ -125,4 +130,3 @@ ui = AppLayout(
     }
 )
 ui
-
