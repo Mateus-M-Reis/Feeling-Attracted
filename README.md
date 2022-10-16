@@ -2,7 +2,7 @@
 
 This is a simple attractor visualization inspired [this notebook](https://panel.holoviz.org/gallery/simple/clifford_interact.html). Right now it is made with [numpy](), [bqplot](), and [ipywidgets](), although it may change. It's not optimized for speed yet, despite this it already mind-blowing.
 
-[[Aweasome Attractors Visualization - Clifford Attractor - YouTube](https://www.youtube.com/watch?v=tdsQpVRW67w)](Clifford Attractors)
+![](https://www.youtube.com/watch?v=tdsQpVRW67w)
 
 ## Run it
 
