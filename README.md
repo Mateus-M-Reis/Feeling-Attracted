@@ -29,9 +29,3 @@ You can run the notebook without even installing [voila](), but if you want to r
 ## Available Attractors right now:
 
 - Clifford Attractor (fractral dream attractor)
-
-## To do
-
-- Everything
-
-Updates soon.
